@@ -1,32 +1,68 @@
 version: "3.7"
 services:
-  web-server:
+  web-server-tas:
     build:
       dockerfile: php.Dockerfile
       context: .
-    restart: always
+    restart: unless-stopped
     volumes:
       - "./html/:/var/www/html/"
     ports:
       - "8083:80"
+    labels:
+      - traefik.enable=true
+      - traefik.frontend.rule=Host:tellasecret.es
+      - traefik.frontend.entryPoints=http,https
+      - traefik.port=80
+      - traefik.docker.network=traefik_default
+      - traefik.frontend.protocol=http
+      - traefik.landing.frontendpage.redirect.regex=^www.tellasecret.es([/](.*))*
+      - traefik.landing.frontendpage.redirect.replacement=https://tellasecret.es$${1}
+      - traefik.landing.frontendpage.redirect.permanent=true
+    networks:
+      - traefik_default
+
   mysql-server:
     image: mysql:8.0.19
-    restart: always
+    restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: secret
     volumes:
       - mysql-data:/var/lib/mysql
     ports:
       - '3306:3307'
+    labels:
+      - traefik.enable=true
+      - traefik.frontend.rule=Host:mysql.tellasecret.es
+      - traefik.frontend.entryPoints=http,https
+      - traefik.port=80
+      - traefik.docker.network=traefik_default
+      - traefik.frontend.protocol=http
+    networks:
+      - traefik_default
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:5.0.1
-    restart: always
+    restart: unless-stopped
     environment:
       PMA_HOST: mysql-server
-      PMA_USER: root
-      PMA_PASSWORD: secret
     ports:
       - "5000:80"
+    labels:
+      - traefik.enable=true
+      - traefik.frontend.rule=Host:phpma.tellasecret.es
+      - traefik.frontend.entryPoints=http,https
+      - traefik.port=80
+      - traefik.docker.network=traefik_default
+      - traefik.frontend.protocol=http
+      - traefik.landing.frontendpage.redirect.regex=^phpma.tellasecret.es([/](.*))*
+      - traefik.landing.frontendpage.redirect.replacement=https://phpma.tellasecret.es$${1}
+      - traefik.landing.frontendpage.redirect.permanent=true
+    networks:
+      - traefik_default
 volumes:
   mysql-data:
+
+networks:
+  traefik_default:
+    external: true
