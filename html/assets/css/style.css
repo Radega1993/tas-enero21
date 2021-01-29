@@ -1,0 +1,240 @@
+html, body
+{
+    height: 100%;
+}
+
+.h2mt-7 {
+    margin-top: 7rem!important;
+}
+
+.bg-style {
+  background-size: cover; background-image: url(/assets/img/bg.jpeg);
+  height:100vh;
+}
+
+.nav-text{
+  font-size: 32px !important;
+}
+
+.main-content{
+  border-radius: 20px;
+  box-shadow: 0 5px 5px rgba(0,0,0,.4);
+  display: flex;
+  margin: 5em auto;
+	width: 50%;
+}
+.company__info{
+	background-color: #008080;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+  color: #fff;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.fa-android{
+	font-size:3em;
+}
+
+.logo {
+  height: 125px;
+  width: 250px;
+}
+
+@media screen and (max-width: 640px) {
+	.main-content{width: 90%;}
+	.company__info{
+		display: none;
+	}
+	.login_form{
+		border-top-left-radius:20px;
+		border-bottom-left-radius:20px;
+	}
+}
+@media screen and (min-width: 642px) and (max-width:800px){
+	.main-content{width: 70%;}
+}
+.row > h2{
+	color:#008080;
+}
+.login_form{
+	background-color: #fff;
+	border-top-right-radius:20px;
+	border-bottom-right-radius:20px;
+	border-top:1px solid #ccc;
+	border-right:1px solid #ccc;
+}
+.reg-form{
+	padding: 0 2em;
+}
+.form__input{
+	border:0px solid transparent;
+	border-radius: 0;
+	border-bottom: 1px solid #aaa;
+  margin:1.5em auto;
+  outline:none;
+	padding: 1em .5em .5em;
+	padding-left: 2em;
+  transition: all .5s ease;
+  width: 100%;
+
+}
+.form__input:focus{
+	border-bottom-color: #008080;
+	box-shadow: 0 0 5px rgba(0,80,80,.4);
+	border-radius: 4px;
+}
+.btn{
+  background-color: #fff;
+  border: 1px solid #008080;
+	border-radius: 30px;
+	color:#008080;
+	font-weight: 600;
+	margin-top: 1.5em;
+	margin-bottom: 1em;
+  transition: all .5s ease;
+  width: 70%;
+}
+.btn:hover, .btn:focus{
+	background-color: #008080;
+	color:#fff;
+}
+
+/* main page */
+blockquote{
+    border-left:none;
+}
+
+.badge {
+  border-radius: 1.25rem;
+  padding: 1.5em 1.4em;
+}
+
+.quote-badge{
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.row-header {
+  height: 100px;
+}
+
+.quote-box{
+  border-radius: 17px;
+  box-shadow: 2px 2px 2px 2px #E0E0E0;
+  margin-top: -50px;
+  margin-top: 25px;
+  overflow: hidden;
+  padding-top: -100px;
+  width: 100%;
+}
+
+.amistad {
+  background-color: #7FBF7F;
+  color:white;
+}
+
+.picante {
+  background-color: #ff6666;
+  color:white;
+}
+
+.trabajo {
+  background-color: #6666FF;
+  color:white;
+}
+
+.escuela {
+  background-color: #B2B200;
+  color:white;
+}
+
+.amor {
+  background-color: #FFC0CB;
+  color:white;
+}
+
+.otros {
+  background-color: #808080;
+  color:white;
+}
+
+
+.quote-category{
+  font-size: 30px;
+  float: none;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+
+.quotation-mark{
+  color:white;
+  display: inline-flex;
+  font-weight: bold;
+  font-size:100px;
+  font-family: "Times New Roman", Georgia, Serif;
+  margin-top: -10px;
+}
+
+.quote-text{
+  float: none;
+  font-size: 19px;
+  margin: 0 auto;
+}
+
+.quote-author {
+  font-size: 25px;
+}
+
+/* categories */
+
+.button {
+  background: #4285f4;
+  border-radius: 5px;
+  box-shadow: 0px 17px 10px -10px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  padding: 20px 30px;
+  text-transform: uppercase;
+  transition: all ease-in-out 300ms;
+  -webkit-transition: all ease-in-out 300ms;
+}
+
+.buton-a {
+  color: #fff;
+  text-decoration: none;
+}
+.buton-a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.button:hover {
+  box-shadow: 0px 37px 20px -20px rgba(0, 0, 0, 0.2);
+  -webkit-transform: translate(0px, -10px) scale(1.2);
+          transform: translate(0px, -10px) scale(1.2);
+}
+
+/* tellasecret */
+
+label {
+    color: #333;
+}
+
+.btn-send {
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    margin-left: 3px;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.help-block.with-errors {
+    color: #ff5050;
+    margin-top: 5px;
+}
+
+.card {
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 1.25rem;
+}
