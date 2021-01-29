@@ -8,9 +8,21 @@ $fav = 0;
 $category_err = $message_err = "";
 $create_at = date("Y-m-d H:i:s");
 
+$min_number = 1;
+$max_number = 15;
 
+$random_number1 = mt_rand($min_number, $max_number);
+$random_number2 = mt_rand($min_number, $max_number);
 
-if($_SERVER["REQUEST_METHOD"] == "POST"){
+$captchaResult = $_POST["captchaResult"];
+$firstNumber = $_POST["firstNumber"];
+$secondNumber = $_POST["secondNumber"];
+
+$checkTotal = $firstNumber + $secondNumber;
+
+if ($captchaResult == $checkTotal) {
+  
+  if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     if(empty(trim($_POST["nick"]))){
       $nick = "Anonimo";
@@ -45,6 +57,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
        }
     mysqli_close($conn);
     }
+  }
+} else {
+  echo "<div class='form alert alert-danger text-center h2mt-7'>
+  <h3>Error Captcha.</h3><br/>
+  </div>";
 }
 
 
@@ -109,6 +126,17 @@ include_once '../ui/header.php';
                         <div id="charNum"></div>
                       </div>
                     </div>
+		    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label for="form_message">Resolve the captcha below:</label>
+                          <br/>
+                          <?php echo $random_number1 . ' + ' . $random_number2 . ' = ';?>
+                          <input name="captchaResult" type="text" />
+                          <input name="firstNumber" type="hidden" value="<?php echo $random_number1; ?>" />
+                          <input name="secondNumber" type="hidden" value="<?php echo $random_number2; ?>" />
+                        </div>
+                      </div>
                     <div class="col-md-12 mx-auto">
                       <button type="submit" class="btn btn-success btn-send pt-2 btn-block ">Send your Secret</button>
                     </div>
