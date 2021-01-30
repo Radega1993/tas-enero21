@@ -105,8 +105,8 @@ include_once '../ui/header.php';
           } else {
             ?>
             <div class="alert alert-dark text-center" role="alert">
-              No hay secretos todavia! <br/>
-              Animate a ser el primero <br/>
+              No hay secretos todavía! <br/>
+              Anímate a ser el primero <br/>
               <a type="button" class="btn btn-success btn-send pt-2 btn-block" href="tellsecret.php">Contar un secreto</a>
             </div>
             <?php
