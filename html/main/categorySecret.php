@@ -71,7 +71,7 @@ include_once '../ui/header.php';
               <blockquote class="quote-box <?php echo $style ?> animate__animated animate__fadeInUp">
                 <div>
                   <p class="pull-right">
-                    <span class="badge quote-badge"> <?php echo $row[2] ?> </span>
+                    <span class="badge quote-badge pl-3"> <?php echo $row[2] ?> </span>
                   </p>
                   <div class="row row-header">
                     <p class="quotation-mark">
@@ -81,7 +81,7 @@ include_once '../ui/header.php';
 
                 </div>
                 <div class="row">
-                  <p class="span6 quote-text mb-0">
+                  <p class="span6 quote-text mb-0 pr-5 pl-r">
                     <?php echo $row[1] ?>
                   </p>
                 </div>

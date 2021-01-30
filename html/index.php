@@ -55,7 +55,7 @@ include_once BASE_PATH . '/ui/header.php';
                     <span class="badge quote-badge"> <?php echo $row[2] ?> </span>
                   </p>
                   <div class="row row-header">
-                    <p class="quotation-mark">
+                    <p class="quotation-mark pl-3">
                       “
                     </p>
                     <p class="quote-category span6">
@@ -65,7 +65,7 @@ include_once BASE_PATH . '/ui/header.php';
 
                 </div>
                 <div class="row">
-                  <p class="span6 quote-text mb-0">
+                  <p class="span6 quote-text mb-0 pr-5 pl-5">
                     <?php echo $row[1] ?>
                   </p>
                 </div>
