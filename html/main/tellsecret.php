@@ -135,7 +135,7 @@ include_once '../ui/header.php';
                         <label for="form_message">Resuelve el captcha:</label>
                         <br/>
                         <?php echo $random_number1 . ' + ' . $random_number2 . ' = ';?>
-                        <input name="captchaResult" type="text" />
+                        <input name="captchaResult" type="text" class="col-md-4"/>
                         <input name="firstNumber" type="hidden" value="<?php echo $random_number1; ?>" />
                         <input name="secondNumber" type="hidden" value="<?php echo $random_number2; ?>" />
                       </div>
