@@ -9,7 +9,7 @@ include_once 'header.php';
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent" style="height: 128px;">
     <ul class="navbar-nav navbar-center nav-text">
       <li class="nav-item active">
         <a class="nav-link mx-3" href="../">Read Secrets <span class="sr-only">(current)</span></a>
