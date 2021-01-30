@@ -21,7 +21,7 @@ $secondNumber = $_POST["secondNumber"];
 $checkTotal = $firstNumber + $secondNumber;
 
 if ($captchaResult == $checkTotal) {
-  
+
   if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     if(empty(trim($_POST["nick"]))){
@@ -124,7 +124,7 @@ include_once '../ui/header.php';
                     <div class="col-md-12">
                       <div class="form-group">
                         <label for="form_message">Tu sectero *</label>
-                        <textarea id="form_message" onkeyup="countChar(this)" name="message" class="form-control" placeholder="Explicanos tus secretos." rows="4" required="required" data-error="Porfavor deja un secreto." maxlength="255"></textarea>
+                        <textarea id="form_message" onkeyup="countChar(this)" name="message" class="form-control" placeholder="Explicanos tus secretos." rows="4" required="required" data-error="Porfavor deja un secreto." maxlength="255" minlength="10"></textarea>
                         <div id="charNum"></div>
                       </div>
                     </div>
