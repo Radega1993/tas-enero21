@@ -47,7 +47,7 @@ html, body
 }
 
 .logo {
-  height: 125px;
+  height: 72px;
   width: 250px;
 }
 
@@ -56,7 +56,7 @@ html, body
 }
 
 .text-responsive {
-  font-size: calc(100% + 1vw + 1vh) !important;
+  font-size: calc(50% + 1vw + 1vh) !important;
 }
 
 @media screen and (max-width: 640px) {
