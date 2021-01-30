@@ -128,17 +128,20 @@ include_once '../ui/header.php';
                         <div id="charNum"></div>
                       </div>
                     </div>
-		    <div class="row">
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <label for="form_message">Resuelve el captcha:</label>
-                          <br/>
-                          <?php echo $random_number1 . ' + ' . $random_number2 . ' = ';?>
-                          <input name="captchaResult" type="text" />
-                          <input name="firstNumber" type="hidden" value="<?php echo $random_number1; ?>" />
-                          <input name="secondNumber" type="hidden" value="<?php echo $random_number2; ?>" />
-                        </div>
+                  </div>
+		              <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label for="form_message">Resuelve el captcha:</label>
+                        <br/>
+                        <?php echo $random_number1 . ' + ' . $random_number2 . ' = ';?>
+                        <input name="captchaResult" type="text" />
+                        <input name="firstNumber" type="hidden" value="<?php echo $random_number1; ?>" />
+                        <input name="secondNumber" type="hidden" value="<?php echo $random_number2; ?>" />
                       </div>
+                    </div>
+                  </div>
+                  <div class="row">
                     <div class="col-md-12 mx-auto">
                       <button type="submit" class="btn btn-success btn-send pt-2 btn-block ">Publicar secreto</button>
                     </div>

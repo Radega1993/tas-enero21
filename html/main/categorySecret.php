@@ -118,7 +118,7 @@ include_once '../ui/header.php';
     if ($data['total'] > 0) {
   ?>
   <nav aria-label="Page navigation example" class="animate__animated animate__fadeInUp">
-    <ul class="pagination justify-content-center">
+    <ul class="pagination justify-content-center animate__animated animate__fadeInUp">
       <?php
       if ($page != 0) {
       ?>
