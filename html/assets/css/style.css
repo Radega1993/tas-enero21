@@ -16,6 +16,12 @@ html, body
   font-size: 32px !important;
 }
 
+.navbar-nav.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+}
+
 .main-content{
   border-radius: 20px;
   box-shadow: 0 5px 5px rgba(0,0,0,.4);
