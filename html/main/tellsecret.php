@@ -74,7 +74,9 @@ include_once '../ui/header.php';
   <?php
   include_once '../../html/ui/navbar.php';
   ?>
-
+  <div class="spacer">
+    &nbsp;
+  </div>
   <section class="pt-5 pb-5 mt-0 align-items-center d-flex bg-dark bg-style">
     <div class="row mx-auto">
       <div class="mx-auto">

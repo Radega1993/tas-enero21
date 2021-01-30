@@ -41,6 +41,10 @@ html, body
   width: 250px;
 }
 
+.spacer {
+  height: 150px;
+}
+
 @media screen and (max-width: 640px) {
 	.main-content{width: 90%;}
 	.company__info{
