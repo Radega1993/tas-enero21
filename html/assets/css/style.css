@@ -56,7 +56,7 @@ html, body
 }
 
 .text-responsive {
-  font-size: calc(100% + 1vw + 1vh);
+  font-size: calc(100% + 1vw + 1vh) !important;
 }
 
 @media screen and (max-width: 640px) {
