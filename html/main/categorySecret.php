@@ -71,17 +71,17 @@ include_once '../ui/header.php';
               <blockquote class="quote-box <?php echo $style ?> animate__animated animate__fadeInUp">
                 <div>
                   <p class="pull-right">
-                    <span class="badge quote-badge pl-3"> <?php echo $row[2] ?> </span>
+                    <span class="badge quote-badge"> <?php echo $row[2] ?> </span>
                   </p>
                   <div class="row row-header">
-                    <p class="quotation-mark">
+                    <p class="quotation-mark pl-3">
                       “
                     </p>
                   </div>
 
                 </div>
                 <div class="row">
-                  <p class="span6 quote-text mb-0 pr-5 pl-5">
+                  <p class="span6 quote-text mb-0 pr-5 pl-5 text-responsive">
                     <?php echo $row[1] ?>
                   </p>
                 </div>
@@ -117,7 +117,7 @@ include_once '../ui/header.php';
   <?php
     if ($data['total'] > 0) {
   ?>
-  <nav aria-label="Page navigation example">
+  <nav aria-label="Page navigation example" class="animate__animated animate__fadeInUp">
     <ul class="pagination justify-content-center">
       <?php
       if ($page != 0) {

@@ -45,6 +45,10 @@ html, body
   height: 150px;
 }
 
+.text-responsive {
+  font-size: calc(100% + 1vw + 1vh);
+}
+
 @media screen and (max-width: 640px) {
 	.main-content{width: 90%;}
 	.company__info{

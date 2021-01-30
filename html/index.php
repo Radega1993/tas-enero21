@@ -65,7 +65,7 @@ include_once BASE_PATH . '/ui/header.php';
 
                 </div>
                 <div class="row">
-                  <p class="span6 quote-text mb-0 pr-5 pl-5">
+                  <p class="span6 quote-text mb-0 pr-5 pl-5 text-responsive">
                     <?php echo $row[1] ?>
                   </p>
                 </div>
