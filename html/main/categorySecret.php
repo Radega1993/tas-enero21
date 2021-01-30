@@ -81,7 +81,7 @@ include_once '../ui/header.php';
 
                 </div>
                 <div class="row">
-                  <p class="span6 quote-text mb-0 pr-5 pl-r">
+                  <p class="span6 quote-text mb-0 pr-5 pl-5">
                     <?php echo $row[1] ?>
                   </p>
                 </div>
