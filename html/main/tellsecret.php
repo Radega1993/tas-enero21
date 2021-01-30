@@ -89,16 +89,16 @@ include_once '../ui/header.php';
                         <label for="form_name">
                           Nick
                         </label>
-                        <input id="form_name" type="text" maxlength="15" onkeyup="countCharNick(this)" name="nick" class="form-control" placeholder="Please enter a nick (optional)">
+                        <input id="form_name" type="text" maxlength="15" onkeyup="countCharNick(this)" name="nick" class="form-control" placeholder="Dinos tu apodo (optional)">
                         <div id="charNumNick"></div>
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-12">
-                      <div class="form-group"> <label for="form_need">Please specify category *</label>
-                        <select id="form_need" name="category" class="form-control" required="required" data-error="Please specify your category.">
-                          <option value="" selected disabled>--Select Your category--</option>
+                      <div class="form-group"> <label for="form_need">Sobre que nos vas a hablar *</label>
+                        <select id="form_need" name="category" class="form-control" required="required" data-error="Escoge una categoria.">
+                          <option value="" selected disabled>--Escoge una categoria--</option>
                           <?php
                             $sqlcat = "SELECT * FROM categoria";
 
@@ -121,15 +121,15 @@ include_once '../ui/header.php';
                   <div class="row">
                     <div class="col-md-12">
                       <div class="form-group">
-                        <label for="form_message">Message *</label>
-                        <textarea id="form_message" onkeyup="countChar(this)" name="message" class="form-control" placeholder="Write your secret here." rows="4" required="required" data-error="Please, leave us a message." maxlength="255"></textarea>
+                        <label for="form_message">Tu sectero *</label>
+                        <textarea id="form_message" onkeyup="countChar(this)" name="message" class="form-control" placeholder="Explicanos tus secretos." rows="4" required="required" data-error="Porfavor deja un secreto." maxlength="255"></textarea>
                         <div id="charNum"></div>
                       </div>
                     </div>
 		    <div class="row">
                       <div class="col-md-12">
                         <div class="form-group">
-                          <label for="form_message">Resolve the captcha below:</label>
+                          <label for="form_message">Resuelve el captcha:</label>
                           <br/>
                           <?php echo $random_number1 . ' + ' . $random_number2 . ' = ';?>
                           <input name="captchaResult" type="text" />
@@ -138,7 +138,7 @@ include_once '../ui/header.php';
                         </div>
                       </div>
                     <div class="col-md-12 mx-auto">
-                      <button type="submit" class="btn btn-success btn-send pt-2 btn-block ">Send your Secret</button>
+                      <button type="submit" class="btn btn-success btn-send pt-2 btn-block ">Publicar secreto</button>
                     </div>
                   </div>
                 </div>

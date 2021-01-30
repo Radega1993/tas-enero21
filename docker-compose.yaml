@@ -11,14 +11,11 @@ services:
       - "8083:80"
     labels:
       - traefik.enable=true
-      - traefik.frontend.rule=Host:tellasecret.es
+      - traefik.frontend.rule=Host:www.tellasecret.es
       - traefik.frontend.entryPoints=http,https
       - traefik.port=80
       - traefik.docker.network=traefik_default
       - traefik.frontend.protocol=http
-      - traefik.landing.frontendpage.redirect.regex=^www.tellasecret.es([/](.*))*
-      - traefik.landing.frontendpage.redirect.replacement=https://tellasecret.es$${1}
-      - traefik.landing.frontendpage.redirect.permanent=true
     networks:
       - traefik_default
 
