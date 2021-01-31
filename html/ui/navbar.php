@@ -1,5 +1,14 @@
 <?php
 include_once 'header.php';
+
+@ob_start();
+session_start();
+
+$uniqueUser = md5(
+  $_SERVER['REMOTE_ADDR'] .
+  $_SERVER['HTTP_USER_AGENT']
+);
+$_SESSION["unique"] = $uniqueUser;
 ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
   <a class="navbar-brand" href="../">

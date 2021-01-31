@@ -1,13 +1,3 @@
-<?php
-  @ob_start();
-  session_start();
-
-  $uniqueUser = md5(
-    $_SERVER['REMOTE_ADDR'] .
-    $_SERVER['HTTP_USER_AGENT']
-  );
-  $_SESSION["unique"] = $uniqueUser;
-?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
   <head>
