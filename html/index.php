@@ -104,10 +104,14 @@ include_once BASE_PATH . '/ui/header.php';
                   <p class="blog-post-bottom pull-right">
                     <?php if (!isset($_SESSION[$row[6]])){
                       ?>
+                      <!--
                       <form method="post" class="pull-right">
                         <button type="submit" value="voteYes" class="badge quote-badge mr-3"><?php echo ucfirst($row[4]) ?> ❤</button>
                         <button type="submit" value="voteNo" class="badge quote-badge mr-3"><?php echo ucfirst($row[5]) ?> X</button>
                       </form> 
+                    -->
+                      <span class="badge quote-badge mr-3"><?php echo ucfirst($row[4]) ?> ❤</span>
+                      <span class="badge quote-badge mr-3"><?php echo ucfirst($row[5]) ?> X</span> 
                       <?php
 
                     } elseif (isset($_SESSION[$row[6]]) && $_SESSION[$row[6]] == 'voteYes') {
