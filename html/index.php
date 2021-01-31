@@ -58,7 +58,7 @@ include_once BASE_PATH . '/ui/header.php';
                 $_SESSION[$row[6]] = 'voteNo';
                 $mynofav = $row[5] + 1;
                 $favquery = "UPDATE 'post' SET 'nofav'='$mynofav' WHERE 'postID' = $row[6]";
-              } 
+              }
 
               ?>
               <blockquote class="quote-box <?php echo strtolower($row[3]) ?> animate__animated animate__bounceInLeft">
