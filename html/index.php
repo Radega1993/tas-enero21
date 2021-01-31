@@ -48,19 +48,18 @@ include_once BASE_PATH . '/ui/header.php';
                 default:
                   $style = "";
               }
-              /*
-              function voteYes(){
-              	$_SESSION[$row[6]] = 'voteYes';
+
+              if(isset($_POST['voteYes'])) {
+                $_SESSION[$row[6]] = 'voteYes';
                 $myfav = $row[4] + 1;
                 $favquery = "UPDATE 'post' SET 'fav'='$myfav' WHERE 'postID' = $row[6]";
               }
-
-              function voteNo(){
-              	$_SESSION[$row[6]] = 'voteNo';
+              if(isset($_POST['voteNo'])) {
+                $_SESSION[$row[6]] = 'voteNo';
                 $mynofav = $row[5] + 1;
                 $favquery = "UPDATE 'post' SET 'nofav'='$mynofav' WHERE 'postID' = $row[6]";
-              }
-              */
+              } 
+
               ?>
               <blockquote class="quote-box <?php echo strtolower($row[3]) ?> animate__animated animate__bounceInLeft">
                 <div>
@@ -91,8 +90,10 @@ include_once BASE_PATH . '/ui/header.php';
                   <p class="blog-post-bottom pull-right">
                     <?php if (!isset($_SESSION[$row[6]])){
                       ?>
-                      <span class="badge quote-badge mr-3" ><?php echo ucfirst($row[4]) ?> ❤</span>
-                      <span class="badge quote-badge mr-3" ><?php echo ucfirst($row[5]) ?> X</span> 
+                      <form method="post">
+                        <button type="submit" value="voteYes"><span class="badge quote-badge mr-3" ><?php echo ucfirst($row[4]) ?> ❤</span></button>
+                        <button type="submit" value="voteNo"><span class="badge quote-badge mr-3" ><?php echo ucfirst($row[5]) ?> X</span></button>
+                      </form> 
                       <?php
 
                     } elseif (isset($_SESSION[$row[6]]) && $_SESSION[$row[6]] == 'voteYes') {
