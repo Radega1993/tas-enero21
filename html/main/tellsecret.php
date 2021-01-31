@@ -5,6 +5,7 @@ require_once "../config/db.php";
 
 $nick = $category = $message = "";
 $fav = 0;
+$nofav = 0;
 $category_err = $message_err = "";
 $create_at = date("Y-m-d H:i:s");
 
@@ -43,7 +44,7 @@ if ($captchaResult == $checkTotal) {
     }
 
     if(empty($category_err) && empty($message_err)){
-      $sql = "INSERT INTO `post` (nick, postText, categoriaID, fav, created_at) VALUES ('$nick','$message', '$category', '$fav', '$create_at')";
+      $sql = "INSERT INTO `post` (nick, postText, categoriaID, fav, created_at, nofav) VALUES ('$nick','$message', '$category', '$fav', '$create_at', '$nofav')";
       $q = $conn->query($sql);
       if($q){
         echo'<script type="text/javascript">

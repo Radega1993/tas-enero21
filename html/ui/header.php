@@ -1,3 +1,9 @@
+<?php
+$uniqueUser = md5(
+  $_SERVER['REMOTE_ADDR'] .
+  $_SERVER['HTTP_USER_AGENT']
+);
+?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
   <head>

@@ -38,9 +38,9 @@ include_once '../ui/header.php';
 
       <?php
         if ($page == 0) {
-          $sql = "SELECT nick, postText, created_at, fav FROM post WHERE categoriaID='$myCategory' ORDER BY postID DESC LIMIT 10";
+          $sql = "SELECT nick, postText, created_at, fav, nofav FROM post WHERE categoriaID='$myCategory' ORDER BY postID DESC LIMIT 10";
         } else {
-          $sql = "SELECT nick, postText, created_at, fav FROM post WHERE categoriaID='$myCategory' ORDER BY postID DESC LIMIT 10 OFFSET ".($page)* 10;
+          $sql = "SELECT nick, postText, created_at, fav, nofav FROM post WHERE categoriaID='$myCategory' ORDER BY postID DESC LIMIT 10 OFFSET ".($page)* 10;
         }
         if($q = $conn->query($sql)){
           if($q -> num_rows !== 0){
@@ -91,11 +91,11 @@ include_once '../ui/header.php';
                     By: <?php echo ucfirst($row[0]) ?>
                   </p>
 
-                  <!--
                   <p class="blog-post-bottom pull-right">
                     <span class="badge quote-badge mr-3"><?php echo ucfirst($row[3]) ?> ❤</span> 
+                    <span class="badge quote-badge mr-3"><?php echo ucfirst($row[4]) ?> X</span> 
                   </p>
-                -->
+
                 </div>
               </blockquote>
 

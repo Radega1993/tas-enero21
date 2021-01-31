@@ -1,5 +1,9 @@
 <?php
 
+function votePositive() {
+
+}
+
 // Include config file
 define('BASE_PATH', realpath(dirname(__FILE__)));
 require_once BASE_PATH . "/config/db.php";
@@ -21,7 +25,7 @@ include_once BASE_PATH . '/ui/header.php';
     <h1 class="text-center">Úlitimos 10 secretos publicados</h1>
 
       <?php
-        $sql = "SELECT p.nick, p.postText, p.created_at, c.name, p.fav FROM post AS p JOIN categoria AS c ON p.categoriaID = c.categoriaID ORDER BY postID DESC LIMIT 10";
+        $sql = "SELECT p.nick, p.postText, p.created_at, c.name, p.fav, p.nofav FROM post AS p JOIN categoria AS c ON p.categoriaID = c.categoriaID ORDER BY postID DESC LIMIT 10";
 
         if($q = $conn->query($sql)){
           if($q -> num_rows !== 0){
@@ -74,11 +78,12 @@ include_once BASE_PATH . '/ui/header.php';
                   <p class="blog-post-bottom quote-author ml-3">
                     By: <?php echo ucfirst($row[0]) ?>
                   </p>
-                  <!--
+
                   <p class="blog-post-bottom pull-right">
-                    <span class="badge quote-badge mr-3"><?php echo ucfirst($row[4]) ?> ❤</span> 
+                    <span class="badge quote-badge mr-3"><?php echo ucfirst($row[4]) ?> ❤</span>
+                    <span class="badge quote-badge mr-3"><?php echo ucfirst($row[5]) ?> X</span> 
                   </p>
-                -->
+
                 </div>
               </blockquote>
 
