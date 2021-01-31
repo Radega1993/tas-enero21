@@ -60,13 +60,18 @@ include_once BASE_PATH . '/ui/header.php';
                 $_SESSION[$row[6]] = 'voteYes';
                 $myfav = $row[4] + 1;
                 $postid = $row[6];
-                $favquery = $conn->query("UPDATE 'post' SET 'fav'='$myfav' WHERE 'postID' = '$postid'");
+                $query2 = "UPDATE 'post' SET 'fav'='$myfav' WHERE 'postID' = '$postid'";
+                $conn->query("UPDATE 'post' SET 'fav'='$myfav' WHERE 'postID' = '$postid'");
+                echo $query2;
+
               }
               if(isset($_POST['voteNo'])) {
                 $_SESSION[$row[6]] = 'voteNo';
                 $mynofav = $row[5] + 1;
                 $postid = $row[6];
-                $favquery = $conn->query("UPDATE 'post' SET 'nofav'='$mynofav' WHERE 'postID' = '$postid'");
+                $query1 = "UPDATE 'post' SET 'nofav'='$mynofav' WHERE 'postID' = '$postid'";
+                $conn->query("UPDATE 'post' SET 'nofav'='$mynofav' WHERE 'postID' = '$postid'");
+                echo $query1;
               }
 
               ?>
