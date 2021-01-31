@@ -1,5 +1,12 @@
 <?php
+@ob_start();
+session_start();
 
+$uniqueUser = md5(
+  $_SERVER['REMOTE_ADDR'] .
+  $_SERVER['HTTP_USER_AGENT']
+);
+$_SESSION["unique"] = $uniqueUser;
 // Include config file
 define('BASE_PATH', realpath(dirname(__FILE__)));
 require_once BASE_PATH . "/config/db.php";
@@ -91,8 +98,8 @@ include_once BASE_PATH . '/ui/header.php';
                     <?php if (!isset($_SESSION[$row[6]])){
                       ?>
                       <form method="post">
-                        <button type="submit" value="voteYes"><span class="badge quote-badge mr-3" ><?php echo ucfirst($row[4]) ?> ❤</span></button>
-                        <button type="submit" value="voteNo"><span class="badge quote-badge mr-3" ><?php echo ucfirst($row[5]) ?> X</span></button>
+                        <button type="submit" value="voteYes" class="badge quote-badge mr-3"><?php echo ucfirst($row[4]) ?> ❤</button>
+                        <button type="submit" value="voteNo" class="badge quote-badge mr-3"><?php echo ucfirst($row[5]) ?> X</button>
                       </form> 
                       <?php
 
