@@ -59,12 +59,14 @@ include_once BASE_PATH . '/ui/header.php';
               if(isset($_POST['voteYes'])) {
                 $_SESSION[$row[6]] = 'voteYes';
                 $myfav = $row[4] + 1;
-                $favquery = $conn->query("UPDATE 'post' SET 'fav'='$myfav' WHERE 'postID' = '$row[6]'");
+                $postid = $row[6];
+                $favquery = $conn->query("UPDATE 'post' SET 'fav'='$myfav' WHERE 'postID' = '$postid'");
               }
               if(isset($_POST['voteNo'])) {
                 $_SESSION[$row[6]] = 'voteNo';
                 $mynofav = $row[5] + 1;
-                $favquery = $conn->query("UPDATE 'post' SET 'nofav'='$mynofav' WHERE 'postID' = '$row[6]'");
+                $postid = $row[6];
+                $favquery = $conn->query("UPDATE 'post' SET 'nofav'='$mynofav' WHERE 'postID' = '$postid'");
               }
 
               ?>
@@ -97,7 +99,7 @@ include_once BASE_PATH . '/ui/header.php';
                   <p class="blog-post-bottom pull-right">
                     <?php if (!isset($_SESSION[$row[6]])){
                       ?>
-                      <form method="post">
+                      <form method="post" class="pull-right">
                         <button type="submit" value="voteYes" class="badge quote-badge mr-3"><?php echo ucfirst($row[4]) ?> ❤</button>
                         <button type="submit" value="voteNo" class="badge quote-badge mr-3"><?php echo ucfirst($row[5]) ?> X</button>
                       </form> 
