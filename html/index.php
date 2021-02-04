@@ -55,7 +55,7 @@ include_once BASE_PATH . '/ui/header.php';
                 default:
                   $style = "";
               }
-
+            /*
               if(isset($_POST['voteYes'])) {
                 $_SESSION[$row[6]] = 'voteYes';
                 $myfav = $row[4] + 1;
@@ -73,7 +73,7 @@ include_once BASE_PATH . '/ui/header.php';
                 $conn->query("UPDATE 'post' SET 'nofav'='$mynofav' WHERE 'postID' = '$postid'");
                 echo $query1;
               }
-
+*/
               ?>
               <blockquote class="quote-box <?php echo strtolower($row[3]) ?> animate__animated animate__bounceInLeft">
                 <div>
@@ -93,7 +93,7 @@ include_once BASE_PATH . '/ui/header.php';
                 <div class="row">
                   <p class="span6 quote-text mb-0 pr-5 pl-5 text-responsive">
                     <?php echo $row[1] ?>
-                  </p>action="<?php echo $_SERVER['PHP_SELF']; ?>"
+                  </p>
                 </div>
                 <hr>
                 <div class="blog-post-actions">
@@ -102,31 +102,10 @@ include_once BASE_PATH . '/ui/header.php';
                   </p>
 
                   <p class="blog-post-bottom pull-right">
-                    <?php if (!isset($_SESSION[$row[6]])){
-                      ?>
-
-                      <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="pull-right">
-                        <button type="submit" value="voteYes" class="badge quote-badge mr-3"><?php echo ucfirst($row[4]) ?> ❤</button>
-                        <button type="submit" value="voteNo" class="badge quote-badge mr-3"><?php echo ucfirst($row[5]) ?> X</button>
-                      </form> 
-
+                    <!--
                       <span class="badge quote-badge mr-3"><?php echo ucfirst($row[4]) ?> ❤</span>
                       <span class="badge quote-badge mr-3"><?php echo ucfirst($row[5]) ?> X</span> 
-                      <?php
-
-                    } elseif (isset($_SESSION[$row[6]]) && $_SESSION[$row[6]] == 'voteYes') {
-                      ?>
-                      <span class="badge quote-badge mr-3"><?php echo ucfirst($row[4]) ?> ❤</span>
-                      <span class="badge quote-badge mr-3"><?php echo ucfirst($row[5]) ?> X</span> 
-                    <?php
-                    } else {
-                    ?>
-                      <span class="badge quote-badge mr-3"><?php echo ucfirst($row[4]) ?> ❤</span>
-                      <span class="badge quote-badge mr-3"><?php echo ucfirst($row[5]) ?> X</span>
-                    <?php
-                    }
-                    ?>
-
+                    -->
                   </p>
 
                 </div>
